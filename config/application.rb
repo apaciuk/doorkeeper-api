@@ -24,6 +24,11 @@ module DoorkeeperApp
     config.application_name = Rails.application.class.module_parent_name
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.generators do |g|
+    g.orm :active_record, primary_key_type: :uuid, foreign_key_type: :uuid
+    g.test_framework :rspec
+    g.fixture_replacement :factory_bot, dir: "spec/factories"
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #

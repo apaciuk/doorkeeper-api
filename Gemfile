@@ -44,13 +44,18 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
-
+gem 'doorkeeper'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'shoulda'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "byebug", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do
@@ -76,7 +81,7 @@ gem "omniauth-github", "~> 2.0"
 gem "omniauth-twitter", "~> 1.4"
 gem "pretender", "~> 0.3.4"
 gem "pundit", "~> 2.1"
-gem "sidekiq", "~> 6.2"
+gem "sidekiq", "~> 6.5.5"
 gem "sitemap_generator", "~> 6.1"
 gem "whenever", require: false
 gem "responders", github: "heartcombo/responders", branch: "main"

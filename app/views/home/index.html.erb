@@ -1,2 +1,25 @@
-<h1>Welcome to Jumpstart!</h1>
-<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<div class="mt-5">
+<% if user_signed_in? %>
+<%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-warning" %>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+
+<div class="container mt-3">
+<p>You can test the API with the following credentials</p>
+<p class="mb-3"><%= @application.as_json %></p>
+<ul>
+<li><%= link_to "Books", books_path %></li>
+<li><%= link_to "Api V1 Books", api_v1_books_path %></li>
+<li>Books</li>
+</ul>
+</div>
+<% else %>
+<%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
+<% end %>
+</div>
+
+
+
+
+
+
+
